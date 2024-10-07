@@ -58,6 +58,7 @@ param speechServiceLocation string = ''
 param speechServiceName string = ''
 param speechServiceSkuName string // Set in main.parameters.json
 param useGPT4V bool = false
+param useGPT4 bool = true
 
 @description('Location for the OpenAI resource group')
 @allowed([
@@ -106,17 +107,26 @@ param computerVisionResourceGroupName string = '' // Set in main.parameters.json
 param computerVisionResourceGroupLocation string = '' // Set in main.parameters.json
 param computerVisionSkuName string // Set in main.parameters.json
 
-param chatGptModelName string = ''
-param chatGptDeploymentName string = ''
-param chatGptDeploymentVersion string = ''
-param chatGptDeploymentCapacity int = 0
+param gpt4vModelName string = 'gpt-4V'
+param gpt4vDeploymentName string = 'opensourcerer-completions-4V'
+param gpt4vModelVersion string = '2024-05-13'
+param gpt4vDeploymentCapacity int = 10
+
+param gpt4ModelName string = 'gpt-4o'
+param gpt4DeploymentName string = 'opensourcerer-completions-4o'
+param gpt4ModelVersion string = '2024-05-13'
+param gpt4DeploymentCapacity int = 50
+
+param gpt35ModelName string = 'gpt-35-turbo'
+param gpt35DeploymentName string = 'opensourcerer-completions-35t'
+param gpt35DeploymentVersion string = '0613'
+param gpt35DeploymentCapacity int = 30
+
 var chatGpt = {
-  modelName: !empty(chatGptModelName)
-    ? chatGptModelName
-    : startsWith(openAiHost, 'azure') ? 'gpt-35-turbo' : 'gpt-3.5-turbo'
-  deploymentName: !empty(chatGptDeploymentName) ? chatGptDeploymentName : 'chat'
-  deploymentVersion: !empty(chatGptDeploymentVersion) ? chatGptDeploymentVersion : '0613'
-  deploymentCapacity: chatGptDeploymentCapacity != 0 ? chatGptDeploymentCapacity : 30
+  modelName: !useGPT4 ? gpt35ModelName : gpt4ModelName
+  deploymentName: !useGPT4 ? gpt35DeploymentName : gpt4DeploymentName
+  deploymentVersion: !useGPT4 ? gpt35DeploymentVersion : gpt4ModelVersion
+  deploymentCapacity: !useGPT4 ? gpt35DeploymentCapacity : gpt4DeploymentCapacity
 }
 
 param embeddingModelName string = ''
@@ -128,14 +138,9 @@ var embedding = {
   modelName: !empty(embeddingModelName) ? embeddingModelName : 'text-embedding-ada-002'
   deploymentName: !empty(embeddingDeploymentName) ? embeddingDeploymentName : 'embedding'
   deploymentVersion: !empty(embeddingDeploymentVersion) ? embeddingDeploymentVersion : '2'
-  deploymentCapacity: embeddingDeploymentCapacity != 0 ? embeddingDeploymentCapacity : 30
+  deploymentCapacity: embeddingDeploymentCapacity != 0 ? embeddingDeploymentCapacity : 50
   dimensions: embeddingDimensions != 0 ? embeddingDimensions : 1536
 }
-
-param gpt4vModelName string = 'gpt-4o'
-param gpt4vDeploymentName string = 'gpt-4o'
-param gpt4vModelVersion string = '2024-05-13'
-param gpt4vDeploymentCapacity int = 10
 
 param tenantId string = tenant().tenantId
 param authTenantId string = ''
@@ -188,7 +193,7 @@ param useChatHistoryBrowser bool = false
 @description('Show options to use vector embeddings for searching in the app UI')
 param useVectors bool = false
 @description('Use Built-in integrated Vectorization feature of AI Search to vectorize and ingest documents')
-param useIntegratedVectorization bool = false
+param useIntegratedVectorization bool = true
 
 @description('Enable user document upload feature')
 param useUserUpload bool = false
