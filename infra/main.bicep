@@ -136,7 +136,7 @@ param embeddingDeploymentCapacity int = 0
 param embeddingDimensions int = 0
 var embedding = {
   modelName: !empty(embeddingModelName) ? embeddingModelName : 'text-embedding-ada-002'
-  deploymentName: !empty(embeddingDeploymentName) ? embeddingDeploymentName : 'embedding'
+  deploymentName: !empty(embeddingDeploymentName) ? embeddingDeploymentName : 'opensourcerer-embeddings-002'
   deploymentVersion: !empty(embeddingDeploymentVersion) ? embeddingDeploymentVersion : '2'
   deploymentCapacity: embeddingDeploymentCapacity != 0 ? embeddingDeploymentCapacity : 50
   dimensions: embeddingDimensions != 0 ? embeddingDimensions : 1536
@@ -355,6 +355,7 @@ var appEnvVariables = {
   ALLOWED_ORIGIN: allowedOrigin
   USE_VECTORS: useVectors
   USE_GPT4V: useGPT4V
+  USE_GPT4: useGPT4
   USE_USER_UPLOAD: useUserUpload
   AZURE_USERSTORAGE_ACCOUNT: useUserUpload ? userStorage.outputs.name : ''
   AZURE_USERSTORAGE_CONTAINER: useUserUpload ? userStorageContainerName : ''
