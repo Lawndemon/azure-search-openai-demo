@@ -60,7 +60,7 @@ def create_mock_jwt(kid="mock_kid", oid="OID_X"):
         "oid": oid,
         "preferred_username": "john.doe@example.com",
         "rh": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.",
-        "tid": "22222222-2222-2222-2222-222222222222",
+        "tid": "55b03122-2222-2222-2222-55b03155b031",
         "uti": "AbCdEfGhIjKlMnOp-ABCDEFG",
         "ver": "2.0",
     }

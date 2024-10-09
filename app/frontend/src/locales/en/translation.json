@@ -1,8 +1,8 @@
 {
-    "pageTitle": "Azure OpenAI + AI Search",
-    "headerTitle": "Azure OpenAI + AI Search",
+    "pageTitle": "Long View Opensourcerer Demo",
+    "headerTitle": "Long View Opensourcerer Demo",
     "chat": "Chat",
-    "qa": "Ask a question",
+    "qa": "Help",
     "login": "Login",
     "logout": "Logout",
     "clearChat": "Clear chat",
@@ -34,13 +34,13 @@
     },
     "developerSettings": "Developer settings",
 
-    "chatEmptyStateTitle": "Chat with your data",
+    "chatEmptyStateTitle": "Explore your data",
     "chatEmptyStateSubtitle": "Ask anything or try an example",
     "defaultExamples": {
-        "1": "What is included in my Northwind Health Plus plan that is not in standard?",
-        "2": "What happens in a performance review?",
-        "3": "What does a Product Manager do?",
-        "placeholder": "Type a new question (e.g. does my plan cover annual eye exams?)"
+        "1": "What is included in my Long View Health Plus plan?",
+        "2": "What is a CLP at Long View?",
+        "3": "What is the Long View Code of Conduct?",
+        "placeholder": "Start a new conversation (e.g. does my plan cover annual eye exams?)"
     },
     "askTitle": "Ask your data",
     "gpt4vExamples": {
