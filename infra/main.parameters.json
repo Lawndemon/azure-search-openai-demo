@@ -2,65 +2,164 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "environmentName": {
-      "value": "${AZURE_ENV_NAME}"
+    "allowedOrigin": {
+      "value": "${ALLOWED_ORIGIN}"
     },
-    "resourceGroupName": {
-      "value": "${AZURE_RESOURCE_GROUP}"
+    "appServicePlanName": {
+      "value": "${AZURE_APP_SERVICE_PLAN}"
     },
-    "location": {
-      "value": "${AZURE_LOCATION}"
+    "appServiceSkuName": {
+      "value": "${AZURE_APP_SERVICE_SKU=B1}"
     },
-    "principalId": {
-      "value": "${AZURE_PRINCIPAL_ID}"
+    "applicationInsightsDashboardName": {
+      "value": "${AZURE_APPLICATION_INSIGHTS_DASHBOARD}"
     },
-    "openAiServiceName": {
-      "value": "${AZURE_OPENAI_SERVICE}"
+    "applicationInsightsName": {
+      "value": "${AZURE_APPLICATION_INSIGHTS}"
     },
-    "openAiResourceGroupName": {
-      "value": "${AZURE_OPENAI_RESOURCE_GROUP}"
+    "authTenantId": {
+      "value": "${AZURE_AUTH_TENANT_ID}"
     },
-    "openAiSkuName": {
-      "value": "S0"
+    "azureContainerAppsWorkloadProfile": {
+      "value": "${AZURE_CONTAINER_APPS_WORKLOAD_PROFILE=Consumption}"
     },
-    "computerVisionServiceName": {
-      "value": "${AZURE_COMPUTER_VISION_SERVICE}"
+    "azureOpenAiApiKey": {
+      "value": "${AZURE_OPENAI_API_KEY_OVERRIDE}"
     },
-    "computerVisionResourceGroupName": {
-      "value": "${AZURE_COMPUTER_VISION_RESOURCE_GROUP}"
+    "azureOpenAiApiVersion": {
+      "value": "${AZURE_OPENAI_API_VERSION}"
+    },
+    "azureOpenAiCustomUrl": {
+      "value": "${AZURE_OPENAI_CUSTOM_URL}"
+    },
+    "backendServiceName": {
+      "value": "${AZURE_APP_SERVICE}"
+    },
+    "bypass": {
+      "value": "${AZURE_NETWORK_BYPASS=AzureServices}"
+    },
+    "chatGptDeploymentCapacity": {
+      "value": "${AZURE_OPENAI_CHATGPT_DEPLOYMENT_CAPACITY}"
+    },
+    "chatGptDeploymentName": {
+      "value": "${AZURE_OPENAI_CHATGPT_DEPLOYMENT}"
+    },
+    "chatGptDeploymentVersion": {
+      "value": "${AZURE_OPENAI_CHATGPT_DEPLOYMENT_VERSION}"
+    },
+    "chatGptModelName": {
+      "value": "${AZURE_OPENAI_CHATGPT_MODEL}"
+    },
+    "clientAppId": {
+      "value": "${AZURE_CLIENT_APP_ID}"
+    },
+    "clientAppSecret": {
+      "value": "${AZURE_CLIENT_APP_SECRET}"
     },
     "computerVisionResourceGroupLocation": {
       "value": "${AZURE_COMPUTER_VISION_LOCATION=eastus}"
     },
+    "computerVisionResourceGroupName": {
+      "value": "${AZURE_COMPUTER_VISION_RESOURCE_GROUP}"
+    },
+    "computerVisionServiceName": {
+      "value": "${AZURE_COMPUTER_VISION_SERVICE}"
+    },
     "computerVisionSkuName": {
       "value": "${AZURE_COMPUTER_VISION_SKU=S1}"
     },
-    "documentIntelligenceServiceName": {
-      "value": "${AZURE_DOCUMENTINTELLIGENCE_SERVICE}"
+    "deploymentTarget": {
+      "value": "${DEPLOYMENT_TARGET=appservice}"
     },
-    "documentIntelligenceResourceGroupName": {
-      "value": "${AZURE_DOCUMENTINTELLIGENCE_RESOURCE_GROUP}"
-    },
-    "documentIntelligenceSkuName": {
-      "value": "${AZURE_DOCUMENTINTELLIGENCE_SKU=S0}"
+    "disableAppServicesAuthentication": {
+      "value": "${AZURE_DISABLE_APP_SERVICES_AUTHENTICATION=false}"
     },
     "documentIntelligenceResourceGroupLocation": {
       "value": "${AZURE_DOCUMENTINTELLIGENCE_LOCATION}"
     },
+    "documentIntelligenceResourceGroupName": {
+      "value": "${AZURE_DOCUMENTINTELLIGENCE_RESOURCE_GROUP}"
+    },
+    "documentIntelligenceServiceName": {
+      "value": "${AZURE_DOCUMENTINTELLIGENCE_SERVICE}"
+    },
+    "documentIntelligenceSkuName": {
+      "value": "${AZURE_DOCUMENTINTELLIGENCE_SKU=S0}"
+    },
+    "embeddingDeploymentCapacity": {
+      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT_CAPACITY}"
+    },
+    "embeddingDeploymentName": {
+      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT}"
+    },
+    "embeddingDeploymentVersion": {
+      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT_VERSION}"
+    },
+    "embeddingDimensions": {
+      "value": "${AZURE_OPENAI_EMB_DIMENSIONS}"
+    },
+    "embeddingModelName": {
+      "value": "${AZURE_OPENAI_EMB_MODEL_NAME}"
+    },
+    "enableGlobalDocuments": {
+      "value": "${AZURE_ENABLE_GLOBAL_DOCUMENT_ACCESS=false}"
+    },
+    "enableLanguagePicker": {
+      "value": "${ENABLE_LANGUAGE_PICKER=false}"
+    },
+    "enforceAccessControl": {
+      "value": "${AZURE_ENFORCE_ACCESS_CONTROL=false}"
+    },
+    "enableUnauthenticatedAccess": {
+      "value": "${AZURE_ENABLE_UNAUTHENTICATED_ACCESS=false}"
+    },
+    "environmentName": {
+      "value": "${AZURE_ENV_NAME}"
+    },
+    "gpt4vDeploymentCapacity": {
+      "value": "${AZURE_OPENAI_GPT4V_DEPLOYMENT_CAPACITY=10}"
+    },
+    "location": {
+      "value": "${AZURE_LOCATION}"
+    },
+    "logAnalyticsName": {
+      "value": "${AZURE_LOG_ANALYTICS}"
+    },
+    "openAiApiKey": {
+      "value": "${OPENAI_API_KEY}"
+    },
+    "openAiApiOrganization": {
+      "value": "${OPENAI_ORGANIZATION}"
+    },
+    "openAiHost": {
+      "value": "${OPENAI_HOST=azure}"
+    },
+    "openAiResourceGroupName": {
+      "value": "${AZURE_OPENAI_RESOURCE_GROUP}"
+    },
+    "openAiServiceName": {
+      "value": "${AZURE_OPENAI_SERVICE}"
+    },
+    "openAiSkuName": {
+      "value": "S0"
+    },
+    "principalId": {
+      "value": "${AZURE_PRINCIPAL_ID}"
+    },
+    "publicNetworkAccess": {
+      "value": "${AZURE_PUBLIC_NETWORK_ACCESS=Enabled}"
+    },
+    "resourceGroupName": {
+      "value": "${AZURE_RESOURCE_GROUP}"
+    },
+    "runningOnAdo": {
+      "value": "${TF_BUILD}"
+    },
+    "runningOnGh": {
+      "value": "${GITHUB_ACTIONS}"
+    },
     "searchIndexName": {
       "value": "${AZURE_SEARCH_INDEX=gptkbindex}"
-    },
-    "searchServiceName": {
-      "value": "${AZURE_SEARCH_SERVICE}"
-    },
-    "searchServiceResourceGroupName": {
-      "value": "${AZURE_SEARCH_SERVICE_RESOURCE_GROUP}"
-    },
-    "searchServiceLocation": {
-      "value": "${AZURE_SEARCH_SERVICE_LOCATION}"
-    },
-    "searchServiceSkuName": {
-      "value": "${AZURE_SEARCH_SERVICE_SKU=basic}"
     },
     "searchQueryLanguage": {
       "value": "${AZURE_SEARCH_QUERY_LANGUAGE=en-us}"
@@ -68,8 +167,38 @@
     "searchQuerySpeller": {
       "value": "${AZURE_SEARCH_QUERY_SPELLER=lexicon}"
     },
+    "searchServiceLocation": {
+      "value": "${AZURE_SEARCH_SERVICE_LOCATION}"
+    },
+    "searchServiceName": {
+      "value": "${AZURE_SEARCH_SERVICE}"
+    },
+    "searchServiceResourceGroupName": {
+      "value": "${AZURE_SEARCH_SERVICE_RESOURCE_GROUP}"
+    },
     "searchServiceSemanticRankerLevel": {
       "value": "${AZURE_SEARCH_SEMANTIC_RANKER=free}"
+    },
+    "searchServiceSkuName": {
+      "value": "${AZURE_SEARCH_SERVICE_SKU=basic}"
+    },
+    "serverAppId": {
+      "value": "${AZURE_SERVER_APP_ID}"
+    },
+    "serverAppSecret": {
+      "value": "${AZURE_SERVER_APP_SECRET}"
+    },
+    "speechServiceLocation": {
+      "value": "${AZURE_SPEECH_SERVICE_LOCATION}"
+    },
+    "speechServiceName": {
+      "value": "${AZURE_SPEECH_SERVICE}"
+    },
+    "speechServiceResourceGroupName": {
+      "value": "${AZURE_SPEECH_SERVICE_RESOURCE_GROUP}"
+    },
+    "speechServiceSkuName": {
+      "value": "${AZURE_SPEECH_SERVICE_SKU=S0}"
     },
     "storageAccountName": {
       "value": "${AZURE_STORAGE_ACCOUNT}"
@@ -80,176 +209,47 @@
     "storageSkuName": {
       "value": "${AZURE_STORAGE_SKU=Standard_LRS}"
     },
-    "appServicePlanName": {
-      "value": "${AZURE_APP_SERVICE_PLAN}"
-    },
-    "appServiceSkuName": {
-      "value": "${AZURE_APP_SERVICE_SKU=B1}"
-    },
-    "backendServiceName": {
-      "value": "${AZURE_APP_SERVICE}"
-    },
-    "chatGptModelName":{
-      "value": "${AZURE_OPENAI_CHATGPT_MODEL}"
-    },
-    "chatGptDeploymentName": {
-      "value": "${AZURE_OPENAI_CHATGPT_DEPLOYMENT}"
-    },
-    "chatGptDeploymentVersion":{
-      "value": "${AZURE_OPENAI_CHATGPT_DEPLOYMENT_VERSION}"
-    },
-    "chatGptDeploymentCapacity":{
-      "value": "${AZURE_OPENAI_CHATGPT_DEPLOYMENT_CAPACITY}"
-    },
-    "embeddingModelName":{
-      "value": "${AZURE_OPENAI_EMB_MODEL_NAME}"
-    },
-    "embeddingDeploymentName": {
-      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT}"
-    },
-    "embeddingDeploymentVersion":{
-      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT_VERSION}"
-    },
-    "embeddingDeploymentCapacity":{
-      "value": "${AZURE_OPENAI_EMB_DEPLOYMENT_CAPACITY}"
-    },
-    "embeddingDimensions": {
-      "value": "${AZURE_OPENAI_EMB_DIMENSIONS}"
-    },
-    "gpt4vDeploymentCapacity":{
-      "value": "${AZURE_OPENAI_GPT4V_DEPLOYMENT_CAPACITY=10}"
-    },
-    "openAiHost": {
-      "value": "${OPENAI_HOST=azure}"
-    },
-    "azureOpenAiCustomUrl":{
-      "value": "${AZURE_OPENAI_CUSTOM_URL}"
-    },
-    "azureOpenAiApiVersion":{
-      "value": "${AZURE_OPENAI_API_VERSION}"
-    },
-    "azureOpenAiApiKey":{
-      "value": "${AZURE_OPENAI_API_KEY_OVERRIDE}"
-    },
-    "openAiApiKey": {
-      "value": "${OPENAI_API_KEY}"
-    },
-    "openAiApiOrganization": {
-      "value": "${OPENAI_ORGANIZATION}"
-    },
     "useApplicationInsights": {
       "value": "${AZURE_USE_APPLICATION_INSIGHTS=true}"
-    },
-    "applicationInsightsName": {
-      "value": "${AZURE_APPLICATION_INSIGHTS}"
-    },
-    "applicationInsightsDashboardName": {
-      "value": "${AZURE_APPLICATION_INSIGHTS_DASHBOARD}"
-    },
-    "logAnalyticsName": {
-      "value": "${AZURE_LOG_ANALYTICS}"
-    },
-    "useVectors": {
-      "value": "${USE_VECTORS=true}"
-    },
-    "useGPT4V": {
-      "value": "${USE_GPT4V=false}"
-    },
-    "enableLanguagePicker": {
-      "value": "${ENABLE_LANGUAGE_PICKER=false}"
-    },
-    "useSpeechInputBrowser": {
-      "value": "${USE_SPEECH_INPUT_BROWSER=false}"
-    },
-    "useSpeechOutputBrowser": {
-      "value": "${USE_SPEECH_OUTPUT_BROWSER=false}"
-    },
-    "useSpeechOutputAzure": {
-      "value": "${USE_SPEECH_OUTPUT_AZURE=false}"
-    },
-    "useChatHistoryBrowser": {
-      "value": "${USE_CHAT_HISTORY_BROWSER=false}"
-    },
-    "speechServiceName": {
-      "value": "${AZURE_SPEECH_SERVICE}"
-    },
-    "speechServiceSkuName": {
-      "value": "${AZURE_SPEECH_SERVICE_SKU=S0}"
-    },
-    "speechServiceResourceGroupName": {
-      "value": "${AZURE_SPEECH_SERVICE_RESOURCE_GROUP}"
-    },
-    "speechServiceLocation": {
-      "value": "${AZURE_SPEECH_SERVICE_LOCATION}"
     },
     "useAuthentication": {
       "value": "${AZURE_USE_AUTHENTICATION=false}"
     },
-    "enforceAccessControl": {
-      "value": "${AZURE_ENFORCE_ACCESS_CONTROL=false}"
+    "useChatHistoryBrowser": {
+      "value": "${USE_CHAT_HISTORY_BROWSER=false}"
     },
-    "disableAppServicesAuthentication": {
-      "value": "${AZURE_DISABLE_APP_SERVICES_AUTHENTICATION=false}"
-    },
-    "enableGlobalDocuments": {
-      "value": "${AZURE_ENABLE_GLOBAL_DOCUMENT_ACCESS=false}"
-    },
-    "enableUnauthenticatedAccess": {
-      "value": "${AZURE_ENABLE_UNAUTHENTICATED_ACCESS=false}"
-    },
-    "authTenantId": {
-      "value": "${AZURE_AUTH_TENANT_ID}"
-    },
-    "serverAppId": {
-      "value": "${AZURE_SERVER_APP_ID}"
-    },
-    "serverAppSecret": {
-      "value": "${AZURE_SERVER_APP_SECRET}"
-    },
-    "clientAppId": {
-      "value": "${AZURE_CLIENT_APP_ID}"
-    },
-    "clientAppSecret": {
-      "value": "${AZURE_CLIENT_APP_SECRET}"
-    },
-    "allowedOrigin": {
-      "value": "${ALLOWED_ORIGIN}"
-    },
-    "publicNetworkAccess": {
-      "value": "${AZURE_PUBLIC_NETWORK_ACCESS=Enabled}"
-    },
-    "usePrivateEndpoint": {
-      "value": "${AZURE_USE_PRIVATE_ENDPOINT=false}"
-    },
-    "bypass": {
-      "value": "${AZURE_NETWORK_BYPASS=AzureServices}"
+    "useGPT4V": {
+      "value": "${USE_GPT4V=false}"
     },
     "useIntegratedVectorization": {
       "value": "${USE_FEATURE_INT_VECTORIZATION}"
     },
-    "useUserUpload": {
-      "value": "${USE_USER_UPLOAD}"
+    "useLocalHtmlParser": {
+      "value": "${USE_LOCAL_HTML_PARSER}"
     },
     "useLocalPdfParser": {
       "value": "${USE_LOCAL_PDF_PARSER}"
     },
-    "useLocalHtmlParser": {
-      "value": "${USE_LOCAL_HTML_PARSER}"
+    "usePrivateEndpoint": {
+      "value": "${AZURE_USE_PRIVATE_ENDPOINT=false}"
     },
-    "runningOnGh": {
-      "value": "${GITHUB_ACTIONS}"
+    "useSpeechInputBrowser": {
+      "value": "${USE_SPEECH_INPUT_BROWSER=false}"
     },
-    "runningOnAdo": {
-      "value": "${TF_BUILD}"
+    "useSpeechOutputAzure": {
+      "value": "${USE_SPEECH_OUTPUT_AZURE=false}"
     },
-    "deploymentTarget": {
-      "value": "${DEPLOYMENT_TARGET=appservice}"
+    "useSpeechOutputBrowser": {
+      "value": "${USE_SPEECH_OUTPUT_BROWSER=false}"
+    },
+    "useUserUpload": {
+      "value": "${USE_USER_UPLOAD}"
+    },
+    "useVectors": {
+      "value": "${USE_VECTORS=true}"
     },
     "webAppExists": {
-        "value": "${SERVICE_WEB_RESOURCE_EXISTS=false}"
-    },
-    "azureContainerAppsWorkloadProfile": {
-      "value": "${AZURE_CONTAINER_APPS_WORKLOAD_PROFILE=Consumption}"
+      "value": "${SERVICE_WEB_RESOURCE_EXISTS=false}"
     }
   }
 }
