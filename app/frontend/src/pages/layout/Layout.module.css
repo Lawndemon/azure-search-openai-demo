@@ -5,7 +5,7 @@
 }
 
 .header {
-    background-color: #222222;
+    background-color: #57b948;
     color: #f2f2f2;
 }
 
@@ -39,7 +39,7 @@
     z-index: 100;
     display: none;
     flex-direction: column;
-    background-color: #222222;
+    background-color: #57b948;
     position: absolute;
     top: 2.7rem;
     right: 0;
@@ -55,7 +55,7 @@
 
 .headerNavPageLink {
     padding: 1rem;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #57b948;
     text-align: right;
     color: #f2f2f2;
     text-decoration: none;

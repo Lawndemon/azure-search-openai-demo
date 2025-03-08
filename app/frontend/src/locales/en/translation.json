@@ -1,6 +1,6 @@
 {
-    "pageTitle": "Azure OpenAI + AI Search",
-    "headerTitle": "Azure OpenAI + AI Search",
+    "pageTitle": "Opensourcerer Vision Edition",
+    "headerTitle": "Opensourcerer Vision Edition",
     "chat": "Chat",
     "qa": "Ask a question",
     "login": "Login",
@@ -34,7 +34,7 @@
     },
     "developerSettings": "Developer settings",
 
-    "chatEmptyStateTitle": "Chat with your data",
+    "chatEmptyStateTitle": "",
     "chatEmptyStateSubtitle": "Ask anything or try an example",
     "defaultExamples": {
         "1": "What is included in my Northwind Health Plus plan that is not in standard?",
