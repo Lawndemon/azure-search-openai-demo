@@ -61,7 +61,7 @@ param speechServiceLocation string = ''
 param speechServiceName string = ''
 param speechServiceSkuName string // Set in main.parameters.json
 param speechServiceVoice string = ''
-param useGPT4V bool = false
+param useGPT4V bool = true
 param useEval bool = false
 
 @allowed(['free', 'provisioned', 'serverless'])
